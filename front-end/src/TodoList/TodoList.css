@@ -1,0 +1,479 @@
+.todolist-window {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todolist-window .sort {
+    display: flex;
+    flex-direction: column;
+    font-family: "GSR";
+}
+
+.todolist-window .sort .bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.todolist-window .sort .bar p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.todolist-window .window-icon {
+    color: #fff;
+    font-size: 42px;
+    cursor: pointer;
+    align-self: flex-end;
+    padding-bottom: 20px;
+}
+
+.todolist-window .book-cover {
+    background-color: #f3f0ef;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    padding: 40px;
+}
+
+.book-cover .calendar-box {
+    height: 100%;
+}
+
+.book-cover .calendar-box.todo-lists {
+    margin-top: -40px;
+    margin-left: 40px;
+    width: 350px;
+}
+
+.book-cover .sort {
+    display: flex;
+}
+
+.book-cover h2 {
+    font-family: "GSR";
+    margin: 0;
+    font-size: 28px;
+}
+
+.todolist-window .todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+    height: 630px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px -1px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.todo-list .sub-bar {
+    width: 100%;
+    display: flex;
+}
+
+.todo-list .sub {
+    font-size: 20px;
+    margin: 20px;
+    align-self: baseline;
+    color: #2d2b42;
+}
+
+.sub-bar button {
+    position: absolute;
+    right: 0;
+    margin: 14px 10px 0 0;
+    border-radius: 50px;
+    outline: 0;
+    border: 0;
+    background-color: #d56262;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.sub-bar button .button-text {
+    white-space: nowrap;
+    transition: opacity 1s;
+}
+
+.sub-bar button:hover {
+    width: 108px;
+}
+
+.todo-list .title {
+    font-family: "GSR";
+    width: calc(100% - 40px);
+    margin: 20px 20px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #8e8e8e;
+    font-size: 20px;
+}
+
+.todo-list .space {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    width: calc(100% - 40px);
+    height: 240px;
+    border-bottom: 1px solid #8e8e8e;
+    color: #767676;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    padding-right: 10px;
+}
+
+.todo-list .space::-webkit-scrollbar {
+    position: absolute;
+    width: 12px;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    right: 20px;
+}
+
+.todo-list .space::-webkit-scrollbar-thumb {
+    background-color: #7587c7;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.space.sort {
+    justify-content: flex-start;
+}
+
+.space.sort.center {
+    justify-content: center;
+}
+
+.space .todo-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100px;
+    height: 84px;
+    margin-bottom: 10px;
+    align-items: center;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.todo-box input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.space .todo-box:hover {
+    background-color: #2d2b42;
+    color: #fff;
+}
+
+.todo-box .color {
+    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.todo-box .color.red {
+    background-color: #d56262;
+}
+
+.todo-box .color.yellow {
+    background-color: #e9bd5f;
+}
+
+.todo-box .color.green {
+    background-color: #93eb73;
+}
+
+.todo-box .color.blue {
+    background-color: #7587c7;
+}
+
+.todo-box .color.purple {
+    background-color: #b079d1;
+}
+
+.todo-box h4 {
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.todo-box .text-sort {
+    display: inline-block;
+    max-width: 230px;
+    position: absolute;
+    left: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.todo-box .todo-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.todo-box .todo {
+    font-size: 14px;
+}
+
+.todo-list .space .icon {
+    font-size: 30px;
+}
+
+.todo-list .date-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.todo-list .date-list .active {
+    border-radius: 30px;
+    padding: 10px 14px;
+    background-color: #2d2b42;
+    text-align: center;
+    color: #fff;
+}
+
+.todo-list .date-list .active.inactive {
+    background-color: #fff;
+    color: #000;
+}
+
+.todo-list .date-list > div > div {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.todo-list .date-list > div > input {
+    margin-top: 20px;
+    height: 30px;
+    width: 110px;
+    border-radius: 30px;
+    padding: 0 10px;
+    border: 1px solid #767676;
+    outline: 0;
+}
+
+.todo-input {
+    margin-left: 20px;
+    padding: 0 20px;
+    width: 60%;
+    height: 40px;
+    border-radius: 30px;
+    border: 1px solid #d2d2d2;
+    outline: 0;
+    background-color: #ededed;
+    font-size: 16px;
+}
+
+.todo-input.left {
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.event-box {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.dropbox {
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    position: absolute;
+}
+
+.color-picker {
+    position: absolute;
+    display: flex;
+    box-shadow: 3px 3px 10px -1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 50px;
+    border-radius: 50px;
+    background: #fff;
+    transition: height 0.5s ease-in-out;
+}
+
+.color-picker ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    width: 50px;
+    list-style: none;
+    margin-top: 8px;
+    height: fit-content;
+    gap: 12px;
+}
+
+.color-picker li {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #2d2b42;
+    box-shadow: 3px 3px 10px -1px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.color-picker ul .red {
+    background: #d56262;
+}
+
+.color-picker ul .yellow {
+    background: #e9bd5f;
+}
+
+.color-picker ul .green {
+    background: #93eb73;
+}
+
+.color-picker ul .blue {
+    background: #7587c7;
+}
+
+.color-picker ul .purple {
+    background: #b079d1;
+}
+
+.selected {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    width: 240px;
+    height: 50px;
+    border: 1px solid #8e8e8e;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+#selected {
+    margin-left: 20px;
+}
+
+.selected .reset-lists {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    right: 40px;
+    font-size: 18px;
+    transform: translate(0, -50%);
+    color: #8e8e8e;
+}
+
+.selected .caret {
+    position: absolute;
+    right: 16px;
+}
+
+.selected .menu {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    top: 60px;
+    list-style: none;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: height 0.5s ease-in-out;
+    margin: 0;
+    padding: 0;
+    box-shadow: 3px 3px 10px -1px rgba(0, 0, 0, 0.3);
+}
+
+.menu li {
+    font-family: "GSR";
+    height: 60px;
+    display: flex;
+    padding: 0 16px;
+    align-items: center;
+    border-radius: 10px;
+    margin: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    justify-content: space-between;
+    color: #2d2b42;
+}
+
+.menu li:hover {
+    color: #fff;
+    background-color: #2d2b42;
+}
+
+.selected .menu::-webkit-scrollbar {
+    width: 12px;
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+
+.selected .menu::-webkit-scrollbar-thumb {
+    background-color: #7587c7;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.submit-form {
+    margin-top: 40px;
+    border-radius: 20px;
+    width: 100%;
+    height: 86px;
+    background-color: #fff;
+    box-shadow: 3px 3px 10px -1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit-form .icon {
+    font-size: 42px;
+    margin-right: 20px;
+    color: #7587c7;
+    cursor: pointer;
+}
+
+.submit-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.submit-box .icon {
+    font-size: 42px;
+    margin-right: 20px;
+    color: #7587c7;
+    cursor: pointer;
+}
